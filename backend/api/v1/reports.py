@@ -75,11 +75,10 @@ def download_user_activity_report(
         csv_data = generate_user_report_csv(report_data)
         filename = f"activity_report_{username}.csv"
         return Response(
-            content=csv_data,
-            media_type="text/csv",
+            content=csv_data.encode("utf-8"),
+            media_type="text/csv; charset=utf-8",
             headers={
-                "Content-Disposition": f"attachment; filename={filename}",
-                "Content-Type": "text/csv; charset=utf-8"
+                "Content-Disposition": f'attachment; filename="{filename}"'
             }
         )
 
@@ -97,8 +96,7 @@ def download_user_activity_report(
             content=pdf_bytes,
             media_type="application/pdf",
             headers={
-                "Content-Disposition": f"attachment; filename={filename}",
-                "Content-Type": "application/pdf"
+                "Content-Disposition": f'attachment; filename="{filename}"'
             }
         )
 

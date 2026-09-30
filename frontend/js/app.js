@@ -566,59 +566,35 @@ function filterLogs() {
 }
 
 // Download User Security & Activity Report (PDF, CSV, HTML)
-async function downloadCurrentUserReport(format = 'pdf') {
+// Uses direct URL navigation with ?token= query param so the browser's native
+// download manager handles the Content-Disposition: attachment response.
+// fetch() with Authorization headers cannot trigger native file downloads.
+function downloadCurrentUserReport(format = 'pdf') {
     if (!authToken) {
         showToast("Please log in to export your security report.", "error");
         return;
     }
 
-    showToast(`Generating ${format.toUpperCase()} user report...`, "info");
+    const url = `/api/reports/user-activity?format=${encodeURIComponent(format)}&token=${encodeURIComponent(authToken)}`;
 
-    try {
-        const res = await fetch(`/api/reports/user-activity?format=${format}`, {
-            headers: {
-                "Authorization": `Bearer ${authToken}`
-            }
-        });
-
-        if (!res.ok) {
-            let errorMsg = "Failed to download activity report.";
-            try {
-                const err = await res.json();
-                if (err.detail) errorMsg = err.detail;
-            } catch (e) {}
-            showToast(errorMsg, "error");
-            return;
+    if (format === 'html') {
+        // HTML report: open in a new tab for printing / saving
+        const win = window.open(url, '_blank');
+        if (!win) {
+            showToast("Pop-up was blocked. Please allow pop-ups to view the report.", "error");
         }
-
-        if (format === 'html') {
-            const htmlText = await res.text();
-            const reportWindow = window.open("", "_blank");
-            if (reportWindow) {
-                reportWindow.document.write(htmlText);
-                reportWindow.document.close();
-            } else {
-                showToast("Pop-up was blocked. Please allow pop-ups to view report.", "error");
-            }
-            return;
-        }
-
-        const blob = await res.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        const username = (currentUser && currentUser.username) ? currentUser.username : "user";
-        a.download = `user_security_report_${username}.${format}`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-
-        showToast(`User report downloaded (${format.toUpperCase()})!`, "success");
-    } catch (err) {
-        console.error("Report download failed:", err);
-        showToast("Network error while downloading report.", "error");
+        return;
     }
+
+    // PDF / CSV: create a hidden anchor and click it — browser handles the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    showToast(`Generating ${format.toUpperCase()} report — download will start shortly.`, "success");
 }
 
 // Toast Notifications
