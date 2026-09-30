@@ -1,5 +1,6 @@
 import os
-from fastapi import FastAPI, Depends, UploadFile, File, Query
+from typing import Optional
+from fastapi import FastAPI, Depends, UploadFile, File, Query, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -13,7 +14,8 @@ from backend.api.v1 import (
     files as files_v1,
     security as security_v1,
     admin as admin_v1,
-    dashboard as dashboard_v1
+    dashboard as dashboard_v1,
+    reports as reports_v1
 )
 from backend.schemas.auth_schemas import UserRegisterRequest, UserLoginRequest
 from backend.services.auth_service import register_user, authenticate_user, get_current_user
@@ -47,6 +49,7 @@ app.include_router(files_v1.router, prefix="/api/v1")
 app.include_router(security_v1.router, prefix="/api/v1")
 app.include_router(admin_v1.router, prefix="/api/v1")
 app.include_router(dashboard_v1.router, prefix="/api/v1")
+app.include_router(reports_v1.router, prefix="/api/v1")
 
 # ------------------------------------------------------------------
 # Legacy Backward-Compatibility Route Aliases for Frontend SPA UI
@@ -97,6 +100,17 @@ def legacy_logs(threat_level: str = Query("All"), search: str = Query(None), lim
 @app.get("/api/dashboard/stats", tags=["Legacy Frontend Aliases"])
 def legacy_dashboard_stats(db: Session = Depends(get_db)):
     return get_dashboard_stats(db)
+
+@app.get("/api/reports/user-activity", tags=["Legacy Frontend Aliases"])
+def legacy_download_user_report(
+    format: str = Query("pdf"),
+    token: Optional[str] = Query(None),
+    username: Optional[str] = Query(None),
+    authorization: Optional[str] = Header(None),
+    db: Session = Depends(get_db)
+):
+    user = reports_v1.resolve_report_user(db=db, auth_header=authorization, token=token, username=username)
+    return reports_v1.download_user_activity_report(format=format, current_user=user, db=db)
 
 # Static Files & Frontend SPA Server
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")

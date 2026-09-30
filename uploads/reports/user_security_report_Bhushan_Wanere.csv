@@ -1,0 +1,81 @@
+=== USER ACTIVITY & SECURITY AUDIT REPORT ===
+Generated At,2026-09-30 18:09:31 UTC
+Username,Bhushan Wanere
+User ID,2
+Email,bhushanwanere@gmail.com
+Role,USER
+Account Created,2026-09-02 14:05:43
+Last Login,2026-09-30 18:01:47
+
+=== AI THREAT & TELEMETRY METRICS ===
+Current AI Classification,NORMAL
+Current Threat Level,Low
+Isolation Forest Anomaly Score,0.0396
+Access Frequency (req/min),0.26
+Total Login Attempts,1
+Failed Login Attempts,0
+Encryption Requests,0
+Decryption Requests,1
+Failed Decryptions,0
+
+=== ENCRYPTED FILES INVENTORY ===
+File ID,Original Filename,Size,Encryption Algorithm,Key Wrapping Algorithm,SHA-256 Digest,Timestamp
+2,iks exp 1.docx,905.15 KB,AES-256-GCM,RSA-2048-OAEP,b551ffb25128c1add777e389dc8ef6f09a2a10dd2aba4370f446ee9f116addb1,2026-09-02 14:12:04
+1,exp 6 mdm.pdf,502.75 KB,AES-256-GCM,RSA-2048-OAEP,44258c4c0eb918d9146961d81c07ef98181b18d7995539074e4a269b6245479b,2026-09-02 14:10:55
+
+=== COMPLETE CHRONOLOGICAL AUDIT TRAIL ===
+Log ID,Timestamp,Activity Type,Status,Threat Level,Anomaly Score,Details
+60,2026-09-30 18:01:47,USER_LOGIN,SUCCESS,Low,0.0,User logged in successfully. Role: USER
+59,2026-09-02 14:22:11,FILE_DECRYPTION,SUCCESS,Low,0.044,Decrypted file #2 (iks exp 1.docx). SHA-256 Integrity Verified.
+58,2026-09-02 14:22:08,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+57,2026-09-02 14:22:03,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.0763,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.076. Excessive failures or rapid automated requests detected.
+56,2026-09-02 14:22:00,ATTACK_SIMULATION,TRIGGERED,High,-0.0763,Simulated security attack scenario: failed_decryptions
+53,2026-09-02 14:17:30,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+52,2026-09-02 14:17:28,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.0046,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.005. Excessive failures or rapid automated requests detected.
+51,2026-09-02 14:17:24,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+50,2026-09-02 14:17:24,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+49,2026-09-02 14:17:24,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+48,2026-09-02 14:17:24,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+47,2026-09-02 14:17:23,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+46,2026-09-02 14:17:23,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+45,2026-09-02 14:17:23,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+44,2026-09-02 14:17:23,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+43,2026-09-02 14:17:23,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+42,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+41,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+40,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+39,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+38,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+37,2026-09-02 14:17:22,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+36,2026-09-02 14:17:21,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+35,2026-09-02 14:17:20,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+34,2026-09-02 14:16:12,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+33,2026-09-02 14:16:09,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.0046,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.005. Excessive failures or rapid automated requests detected.
+32,2026-09-02 14:16:07,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+31,2026-09-02 14:15:59,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+30,2026-09-02 14:15:58,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+29,2026-09-02 14:15:53,ATTACK_SIMULATION,TRIGGERED,High,-0.1295,Simulated security attack scenario: failed_logins
+28,2026-09-02 14:15:52,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+27,2026-09-02 14:15:51,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+26,2026-09-02 14:15:50,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+25,2026-09-02 14:15:46,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+24,2026-09-02 14:15:45,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1295,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.130. Excessive failures or rapid automated requests detected.
+23,2026-09-02 14:15:44,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.0046,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.005. Excessive failures or rapid automated requests detected.
+22,2026-09-02 14:15:39,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+21,2026-09-02 14:15:38,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+20,2026-09-02 14:15:38,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+19,2026-09-02 14:15:36,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+18,2026-09-02 14:15:22,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1066,Decryption blocked for file #1 (exp 6 mdm.pdf). Reason: High anomaly detected! Score: -0.107. Excessive failures or rapid automated requests detected.
+17,2026-09-02 14:15:16,FILE_DECRYPTION_BLOCKED,BLOCKED_BY_AI,High,-0.1066,Decryption blocked for file #2 (iks exp 1.docx). Reason: High anomaly detected! Score: -0.107. Excessive failures or rapid automated requests detected.
+16,2026-09-02 14:15:09,ATTACK_SIMULATION,TRIGGERED,High,-0.1066,Simulated security attack scenario: failed_decryptions
+15,2026-09-02 14:13:45,FILE_DECRYPTION,SUCCESS,Low,0.0693,Decrypted file #2 (iks exp 1.docx). SHA-256 Integrity Verified.
+14,2026-09-02 14:13:04,FILE_DECRYPTION,SUCCESS,Low,-0.0046,Decrypted file #2 (iks exp 1.docx). SHA-256 Integrity Verified.
+13,2026-09-02 14:12:51,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+12,2026-09-02 14:12:33,ATTACK_SIMULATION,TRIGGERED,High,-0.097,Simulated security attack scenario: failed_logins
+11,2026-09-02 14:12:04,FILE_ENCRYPTION,SUCCESS,Low,0.0,Encrypted file: iks exp 1.docx (926877 bytes) -> d298c8899c2745e7ace703a80609e09a.enc
+10,2026-09-02 14:11:07,FILE_DECRYPTION,SUCCESS,Low,0.0045,Decrypted file #1 (exp 6 mdm.pdf). SHA-256 Integrity Verified.
+9,2026-09-02 14:10:55,FILE_ENCRYPTION,SUCCESS,Low,0.0,Encrypted file: exp 6 mdm.pdf (514820 bytes) -> 256387f793a04a78847277e9de992b49.enc
+8,2026-09-02 14:07:28,ATTACK_SIMULATION_RESET,SUCCESS,Low,0.0,Reset behavioral counters to baseline normal state
+7,2026-09-02 14:07:15,USER_LOGIN,SUCCESS,Low,0.0,User logged in successfully. Role: USER
+6,2026-09-02 14:05:48,USER_LOGIN,SUCCESS,Low,0.0,User logged in successfully. Role: USER
+5,2026-09-02 14:05:43,USER_REGISTER,SUCCESS,Low,0.0,User registered successfully. Role: USER

@@ -228,6 +228,25 @@
 
             <!-- 3. DASHBOARD VIEW -->
             <section id="viewDashboard" class="view-section">
+                <!-- User Report Export Banner -->
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.25); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <div style="font-weight: 700; color: #fff; font-size: 1.05rem;"><i class="fa-solid fa-file-shield" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> User Security & Activity Report</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Export your complete cryptographic audit trail, encryption inventory, and AI threat scores.</div>
+                    </div>
+                    <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                        <button class="btn-cyber" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;" onclick="downloadCurrentUserReport('pdf')">
+                            <i class="fa-solid fa-file-pdf"></i> Download PDF
+                        </button>
+                        <button class="btn-cyber-outline" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;" onclick="downloadCurrentUserReport('csv')">
+                            <i class="fa-solid fa-file-csv"></i> Export CSV
+                        </button>
+                        <button class="btn-cyber-outline" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;" onclick="downloadCurrentUserReport('html')">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Web Audit
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Stat Widgets Grid -->
                 <div class="stat-grid">
                     <div class="stat-card">
@@ -468,14 +487,23 @@
                 <div class="cyber-card">
                     <div class="card-header">
                         <div class="card-title"><i class="fa-solid fa-list-check"></i> Security Audit Logs</div>
-                        <div style="display: flex; gap: 0.75rem; align-items: center;">
-                            <input type="text" id="logSearchInput" class="form-control" style="width: 220px; padding: 0.5rem 0.8rem; font-size: 0.85rem;" placeholder="Search logs..." onkeyup="filterLogs()">
-                            <select id="logThreatFilter" class="form-control" style="width: 140px; padding: 0.5rem 0.8rem; font-size: 0.85rem;" onchange="filterLogs()">
+                        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                            <input type="text" id="logSearchInput" class="form-control" style="width: 190px; padding: 0.45rem 0.75rem; font-size: 0.85rem;" placeholder="Search logs..." onkeyup="filterLogs()">
+                            <select id="logThreatFilter" class="form-control" style="width: 120px; padding: 0.45rem 0.75rem; font-size: 0.85rem;" onchange="filterLogs()">
                                 <option value="All">All Levels</option>
                                 <option value="Low">Low 🟢</option>
                                 <option value="Medium">Medium 🟡</option>
                                 <option value="High">High 🔴</option>
                             </select>
+                            <button class="btn-cyber" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;" onclick="downloadCurrentUserReport('pdf')" title="Download PDF Report">
+                                <i class="fa-solid fa-file-pdf"></i> PDF
+                            </button>
+                            <button class="btn-cyber-outline" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;" onclick="downloadCurrentUserReport('csv')" title="Export CSV Report">
+                                <i class="fa-solid fa-file-csv"></i> CSV
+                            </button>
+                            <button class="btn-cyber-outline" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;" onclick="downloadCurrentUserReport('html')" title="View Web Report">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Web
+                            </button>
                         </div>
                     </div>
 
